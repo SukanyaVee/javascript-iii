@@ -33,6 +33,12 @@
 
 function showValues( obj ) {
   // CODE HERE
+  let str=""
+  for(var key in obj)
+  {
+    str += obj[key]
+  }
+  return str
 }
 
 
@@ -42,7 +48,17 @@ function showValues( obj ) {
 // Write a function called greaterThan10 that takes in an object. Write a for in loop that loops over the object and changes any value that is great than 10 to 0. Return the updated object.
 
 // CODE HERE
-
+function greaterThan10(obj)
+{
+  for (var key in obj)
+  {
+    if (obj[key]>10)
+    {
+      obj[key]=0
+    }
+  }
+  return obj
+}
 
 
 // ========================
@@ -51,7 +67,14 @@ function showValues( obj ) {
 // Write a function called double that takes in an object. Write a for in loop that loops over the object and changes every value to be itself multipled by 2. Return the updated object.
 
 // CODE HERE
-
+function double(obj)
+{
+  for (var key in obj)
+  {
+    obj[key]*=2
+  }
+  return obj
+}
 
 
 // ========================
@@ -60,7 +83,20 @@ function showValues( obj ) {
 // Write a function called secrets that will take in an object. Create an empty string variable. Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
 
 // CODE HERE
-
+function secrets(obj)
+{
+  var str = ""
+  for (var key in obj)
+  {
+    if (key.charAt(0)==='s'&&key.charAt(1)==='h')
+    {
+      str+=key.charAt(0)+key.charAt(1)+' '
+    }
+  }
+  // console.log(str)
+  return str
+}
+console.log(secrets({ name: 'Beyonce', shpay: 12 , shares: 100}))
 
 // ========================
 

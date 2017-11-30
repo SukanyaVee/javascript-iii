@@ -21,6 +21,20 @@ Each employee can:
 
 call your class Employee and receive all the data in the constructor in the order listed
 */
+class Employee
+{
+    constructor(first, last, email, age)
+    {
+        this.first_name = first
+        this.last_name = last
+        this.email = email
+        this.age = age
+    }
+    makeWidget()
+    {
+        return this.first_name+" "+this.last_name+" "+"Widget"
+    }
+}
 
 
 
@@ -40,7 +54,25 @@ They can (methods) :
 call your class Manager
 
 */
-
+class Manager
+{
+    constructor(first, last, email, age)
+    {
+        this.first_name = first
+        this.last_name = last
+        this.email = email
+        this.age = age
+        this.reports=[]
+    }
+    hire(newEmp)
+    {
+        this.reports.push(newEmp)
+    }
+    fire(reportIndex)
+    {
+        this.reports.splice(reportIndex,1)
+    }
+}
 
 
 
@@ -65,7 +97,68 @@ Everytime they fire an employee they get $100 added to their bonus.
 call your class ProgressiveManager
 */
 
-
+class ProgressiveManager
+{
+    constructor(first, last, email, age)
+    {
+        this.first_name = first
+        this.last_name = last
+        this.email = email
+        this.age = age
+        this.reports=[]
+        this.title='Not a manager'
+        this.bonus = 0
+    }
+    hire(newEmp)
+    {
+        this.reports.push(newEmp)
+        if (this.reports.length>=1&&this.reports.length<=3)
+        {
+            this.title="Barely Manager"
+        }
+        else if (this.reports.length>=4&&this.reports.length<=10)
+        {
+            this.title="Mostly Manager"
+        }
+        else if (this.reports.length>=11&&this.reports.length<=50)
+        {
+            this.title="Manager"
+        }
+        else if (this.reports.length>=51&&this.reports.length<=100)
+        {
+            this.title="Manager Plus"
+        }
+        else if (this.reports.length>=101)
+        {
+            this.title="Bestest Manager"
+        }
+    }
+    fire(reportIndex)
+    {
+        this.reports.splice(reportIndex,1)
+        if (this.reports.length>=1&&this.reports.length<=3)
+        {
+            this.title="Barely Manager"
+        }
+        else if (this.reports.length>=4&&this.reports.length<=10)
+        {
+            this.title="Mostly Manager"
+        }
+        else if (this.reports.length>=11&&this.reports.length<=50)
+        {
+            this.title="Manager"
+        }
+        else if (this.reports.length>=51&&this.reports.length<=100)
+        {
+            this.title="Manager Plus"
+        }
+        else if (this.reports.length>=101)
+        {
+            this.title="Bestest Manager"
+        }
+        this.bonus+=100
+    }
+}
 
 
 /*
@@ -90,3 +183,25 @@ It can :
       It should set decrease wear_and_tear_count by 10, and set needs_reboot to false
 
 */
+class Machine
+{
+    constructor()
+    {
+        widgets_made_count = 0
+        wear_and_tear_count = 0
+        needs_reboot = false
+    }
+    makeWidgets(n)
+    {
+        widgets_made_count+=n
+        if widgets_made_count
+    }
+    fixMachine()
+    {
+
+    }
+    reboot()
+    {
+
+    }
+}
